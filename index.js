@@ -26,7 +26,7 @@ const { sequelize, Phone } = require('./models');
 
 (async function () {
   try {
-    const allPhones = await Phone.findAll();
+    const allPhones = await Phone.findAll({ raw: true });
     console.log(allPhones);
   } catch (err) {
     console.log(err);
