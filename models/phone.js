@@ -11,20 +11,70 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
+
   Phone.init(
     {
-      model: DataTypes.STRING,
-      brand: DataTypes.STRING,
-      year: DataTypes.INTEGER,
-      ram: DataTypes.INTEGER,
-      processor: DataTypes.STRING,
-      screen: DataTypes.FLOAT,
-      nfc: DataTypes.BOOLEAN,
+      model: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notEmpty: true,
+          len: [2, 50],
+        },
+      },
+      brand: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notEmpty: true,
+          len: [2, 50],
+        },
+      },
+      year: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          isInt: true,
+          min: 2000,
+          max: new Date().getFullYear(),
+        },
+      },
+      ram: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          isInt: true,
+          min: 1,
+          max: 32,
+        },
+      },
+      processor: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notEmpty: true,
+          len: [2, 100],
+        },
+      },
+      screen: {
+        type: DataTypes.FLOAT,
+        allowNull: false,
+        validate: {
+          isFloat: true,
+          min: 3.0,
+          max: 7.0,
+        },
+      },
+      nfc: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
+      },
     },
     {
       sequelize,
       modelName: 'Phone',
     }
   );
+
   return Phone;
 };
