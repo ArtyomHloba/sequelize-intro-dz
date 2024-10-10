@@ -5,16 +5,17 @@ const { sequelize, Phone } = require('./models');
 //   .then(() => console.log('Sync OK'))
 //   .catch(err => console.log(err));
 
+// додавання нового телефону,
 // (async function () {
 //   try {
 //     const phone = {
-//       model: '14',
-//       brand: 'Iphone',
-//       year: 2023,
-//       ram: 6,
-//       processor: 'A14',
-//       screen: 6.1,
-//       nfc: true,
+//       model: 'Moto G Stylus',
+//       brand: 'Motorola',
+//       year: 2020,
+//       ram: 4,
+//       processor: 'Snapdragon 665',
+//       screen: 6.4,
+//       nfc: false,
 //     };
 
 //     const createPhone = await Phone.create(phone);
