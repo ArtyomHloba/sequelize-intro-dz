@@ -65,7 +65,7 @@ module.exports = (sequelize, DataTypes) => {
           max: 7.0,
         },
       },
-      nfc: {
+      isNfc: {
         type: DataTypes.BOOLEAN,
         defaultValue: false,
       },
