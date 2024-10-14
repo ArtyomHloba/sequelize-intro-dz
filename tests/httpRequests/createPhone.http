@@ -1,0 +1,40 @@
+POST http://localhost:5000/api/phones
+Content-Type: application/json
+
+{
+    "model": "Xiaomi Note 11 pro",
+    "brand": "Motorola",
+    "year": 2024,
+    "ram": 6,
+    "processor": "Snapdragon 665",
+    "screen": 6.4,
+    "nfc": false
+}
+
+
+### 500 model valid error
+POST http://localhost:5000/api/phones
+Content-Type: application/json
+
+{
+    "model": "T",             
+    "brand": 123,               
+    "year": "invalid_year", 
+    "ram": "six",              
+    "processor": false,        
+    "screen": -5,              
+    "nfc": "yes"                              
+}
+
+
+### 500 db error
+POST http://localhost:5000/api/phones
+Content-Type: application/json
+
+{
+    "model": "Xiaomi Note 11 pro", 
+    "brand": "Motorola",
+    "year": 2024,
+    "ram": 6,
+    "processor": "Snapdragon 665"            
+}

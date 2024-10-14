@@ -1,1 +1,1 @@
-module.exports.phonesControler = require('./phonesController');
+module.exports.phonesController = require('./phonesController');

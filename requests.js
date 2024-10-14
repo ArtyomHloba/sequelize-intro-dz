@@ -10,13 +10,13 @@ const { sequelize, Phone } = require('./models');
 // (async function () {
 //   try {
 //     const phone = {
-//       model: 'Xiaomi Note 11 pro',
-//       brand: 'Motorola',
-//       year: 2024,
-//       ram: 6,
-//       processor: 'Snapdragon 665',
-//       screen: 6.4,
-//       nfc: false,
+//   model: 'Xiaomi Note 11 pro',
+//   brand: 'Motorola',
+//   year: 2024,
+//   ram: 6,
+//   processor: 'Snapdragon 665',
+//   screen: 6.4,
+//   nfc: false,
 //     };
 
 //     const createPhone = await Phone.create(phone);

@@ -1,0 +1,15 @@
+###200 {phone}
+PATCH http://localhost:5000/api/phones/11
+Content-Type: application/json
+
+{
+  "ram": 8
+}
+
+###404 {phone}
+PATCH http://localhost:5000/api/phones/1000
+Content-Type: application/json
+
+{
+  "ram": 8
+}
