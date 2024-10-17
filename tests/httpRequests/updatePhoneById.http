@@ -1,9 +1,9 @@
 ###200 {phone}
-PATCH http://localhost:5000/api/phones/11
+PATCH http://localhost:5000/api/phones/1
 Content-Type: application/json
 
 {
-  "ram": 8
+  "model": "Iphone 13"
 }
 
 ###404 {phone}

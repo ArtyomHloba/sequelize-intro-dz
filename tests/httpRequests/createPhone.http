@@ -2,13 +2,13 @@ POST http://localhost:5000/api/phones
 Content-Type: application/json
 
 {
-    "model": "Xiaomi Note 11 pro",
+    "model": "m11",
     "brand": "Motorola",
     "year": 2024,
-    "ram": 6,
+    "ram": 4,
     "processor": "Snapdragon 665",
     "screen": 6.4,
-    "nfc": false
+    "isNfc": true
 }
 
 
