@@ -8,14 +8,24 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate (models) {
-      // define association here
+      Preorder.belongsTo(models.Phone, {
+        foreignKey: {
+          name: 'phoneId',
+          allowNull: false,
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+      });
     }
   }
   Preorder.init(
     {
       orderDate: DataTypes.DATEONLY,
-      status: DataTypes.ENUM,
-      pending: DataTypes.INTEGER,
+      status: {
+        type: DataTypes.ENUM('pending', 'confirmed', 'done'),
+        allowNull: false,
+      },
+      quantity: DataTypes.INTEGER,
       phoneNumber: DataTypes.STRING,
     },
     {

@@ -1,0 +1,9 @@
+### 200 []
+GET http://localhost:5000/api/phones/3/preorders HTTP/1.1
+
+
+### 404
+GET http://localhost:5000/api/phones/0/preorders HTTP/1.1
+
+### 200 []
+GET http://localhost:5000/api/phones/13/preorders HTTP/1.1
