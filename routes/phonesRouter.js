@@ -1,5 +1,8 @@
 const { Router } = require('express');
 const { phonesController } = require('../controllers');
+const multer = require('multer');
+
+const upload = multer({ dest: 'public/images/' });
 
 const phonesRouter = Router();
 
@@ -15,5 +18,7 @@ phonesRouter
   .delete(phonesController.deletePhoneById);
 
 phonesRouter.get('/:phoneId/preorders', phonesController.getPhonePreorder);
+
+phonesRouter.patch('/:phoneId/images', upload.single('phonePhoto'));
 
 module.exports = phonesRouter;
