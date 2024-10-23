@@ -19,6 +19,10 @@ phonesRouter
 
 phonesRouter.get('/:phoneId/preorders', phonesController.getPhonePreorder);
 
-phonesRouter.patch('/:phoneId/images', upload.single('phonePhoto'));
+phonesRouter.patch(
+  '/:phoneId/images',
+  upload.single('phonePhoto'),
+  phonesController.updateImage
+);
 
 module.exports = phonesRouter;
