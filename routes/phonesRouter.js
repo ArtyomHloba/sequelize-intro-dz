@@ -1,8 +1,6 @@
 const { Router } = require('express');
 const { phonesController } = require('../controllers');
-const multer = require('multer');
-
-const upload = multer({ dest: 'public/images/' });
+const { upload } = require('../middleware');
 
 const phonesRouter = Router();
 
@@ -21,7 +19,7 @@ phonesRouter.get('/:phoneId/preorders', phonesController.getPhonePreorder);
 
 phonesRouter.patch(
   '/:phoneId/images',
-  upload.single('phonePhoto'),
+  upload.uploadPhonePhoto,
   phonesController.updateImage
 );
 
